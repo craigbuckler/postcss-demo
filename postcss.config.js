@@ -1,8 +1,6 @@
 // PostCSS configuration
 module.exports = cfg => {
 
-  console.log(cfg);
-
   // import tokens as Sass variables
   const variables = require('./tokens.json');
 
@@ -20,8 +18,7 @@ module.exports = cfg => {
       require('postcss-nested')(),
       require('postcss-sort-media-queries')(),
       require('postcss-assets')({
-        basePath: 'src',
-        loadPaths: ['images/']
+        loadPaths: ['src/images/']
       }),
       require('autoprefixer')(),
       dev ? null : require('cssnano')()
